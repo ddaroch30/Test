@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QA Flow | Release Test Case Builder</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <h2>QA Accelerator</h2>
+      <p>Jira + Zephyr workflow</p>
+      <ol class="steps">
+        <li class="done">1. Connect Tools</li>
+        <li class="active">2. Fetch Release</li>
+        <li class="active">3. Generate Tests</li>
+        <li class="active">4. Review & Push</li>
+      </ol>
+    </aside>
+
+    <main class="container">
+      <header class="page-header">
+        <h1>Release Requirements & Test Case Builder</h1>
+        <p>Fetch release stories, generate test cases in bulk or selectively, review/edit, approve, then push finalized cases.</p>
+      </header>
+
+      <section class="card">
+        <div class="inline-form">
+          <label>Release Version
+            <input id="releaseVersion" type="text" placeholder="e.g., 2026.03 Sprint-1" />
+          </label>
+          <button id="fetchReleaseBtn">Fetch Release Requirements</button>
+          <a class="button-link secondary-link" href="index.html">Back to Setup</a>
+        </div>
+        <p id="releaseStatus" class="status">Waiting for release details.</p>
+      </section>
+
+      <section class="card">
+        <div class="section-header">
+          <h3>Requirements</h3>
+          <div class="button-row compact">
+            <button id="selectAllBtn" class="secondary">Select All</button>
+            <button id="clearSelectionBtn" class="secondary">Clear Selection</button>
+            <button id="generateTestsBtn">Generate Test Cases</button>
+          </div>
+        </div>
+        <table id="requirementsTable">
+          <thead>
+            <tr>
+              <th>Select</th>
+              <th>Story ID</th>
+              <th>Summary</th>
+              <th>Priority</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <section class="card">
+        <div class="section-header">
+          <h3>Review Generated Test Cases</h3>
+          <button id="pushToJiraBtn">Push Approved Test Cases to Jira</button>
+        </div>
+        <div id="testCasesContainer" class="test-cases"></div>
+        <p id="pushStatus" class="status">No test cases pushed yet.</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
