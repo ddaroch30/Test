@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QA Flow | Connection Setup</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <h2>QA Accelerator</h2>
+      <p>Jira + Zephyr workflow</p>
+      <ol class="steps">
+        <li class="active">1. Connect Tools</li>
+        <li>2. Fetch Release</li>
+        <li>3. Generate Tests</li>
+        <li>4. Review & Push</li>
+      </ol>
+    </aside>
+
+    <main class="container">
+      <header class="page-header">
+        <h1>Connect Jira and Zephyr</h1>
+        <p>Set credentials, validate API connectivity, and save your environment before generating test cases.</p>
+      </header>
+
+      <section class="card">
+        <h3>Jira Connection</h3>
+        <div class="form-grid">
+          <label>Jira Base URL
+            <input id="jiraBaseUrl" type="url" placeholder="https://your-domain.atlassian.net" />
+          </label>
+          <label>Jira Email / Username
+            <input id="jiraUser" type="text" placeholder="you@company.com" />
+          </label>
+          <label>Jira API Token
+            <input id="jiraToken" type="password" placeholder="••••••••" />
+          </label>
+          <label>Project Key
+            <input id="jiraProject" type="text" placeholder="PROJ" />
+          </label>
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>Zephyr Connection</h3>
+        <div class="form-grid">
+          <label>Zephyr Base URL
+            <input id="zephyrBaseUrl" type="url" placeholder="https://api.zephyrscale.smartbear.com/v2" />
+          </label>
+          <label>Access Key
+            <input id="zephyrAccessKey" type="text" placeholder="Access key" />
+          </label>
+          <label>Secret Key
+            <input id="zephyrSecretKey" type="password" placeholder="••••••••" />
+          </label>
+        </div>
+      </section>
+
+      <section class="card actions">
+        <div class="button-row">
+          <button id="testConnectionBtn">Test API Connection</button>
+          <button id="saveConnectionBtn" disabled>Save Connection</button>
+          <a class="button-link" href="release.html">Continue to Release Planning</a>
+        </div>
+        <p id="connectionStatus" class="status">Connection has not been tested yet.</p>
+        <p class="hint">Prototype note: this run validates field completeness and URL format in-browser to avoid exposing credentials server-side.</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
